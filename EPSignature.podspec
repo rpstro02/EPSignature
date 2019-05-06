@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
   s.name             = "EPSignature"
   s.version          = "1.0.6"
-  s.summary          = "Signature component for iOS in Swift"
+  s.summary          = "Signature component for iOS in Swift, forked from orignal to support newer version of swift"
   s.description      = <<-DESC
 Features
 1. User can draw the signature either by finger or by apple pencil
