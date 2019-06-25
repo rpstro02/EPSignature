@@ -23,6 +23,7 @@ open class EPSignatureView: UIView {
 	    didSet { bezierPath.lineWidth = strokeWidth }
     }
     open var isSigned: Bool = false
+    open var signatureGestureRecognizer:UILongPressGestureRecognizer?
     
     // MARK: - Initializers
     
@@ -50,11 +51,12 @@ open class EPSignatureView: UIView {
     
     // MARK: - Touch Functions
     
-    func addLongPressGesture() {
+    private func addLongPressGesture() {
         //Long press gesture is used to keep clear dots in the canvas
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(EPSignatureView.longPressed(_:)))
         longPressGesture.minimumPressDuration = 1.5
         self.addGestureRecognizer(longPressGesture)
+        self.signatureGestureRecognizer = longPressGesture
     }
     
     @objc func longPressed(_ gesture: UILongPressGestureRecognizer) {
