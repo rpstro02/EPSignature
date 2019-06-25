@@ -58,7 +58,7 @@ open class EPSignatureView: UIView {
         self.signatureGestureRecognizer = panGestureRecognizer
     }
     
-    @objc func panGestureRecognized(_ gesture: UILongPressGestureRecognizer) {
+    @objc func panGestureRecognized(_ gesture: UIPanGestureRecognizer) {
         let touchPoint = gesture.location(in: self)
         let endAngle: CGFloat = .pi * 2.0
         bezierPath.move(to: touchPoint)
